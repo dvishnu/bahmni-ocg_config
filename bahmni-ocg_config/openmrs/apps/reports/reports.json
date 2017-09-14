@@ -1,0 +1,318 @@
+{
+
+    "visitReport10": {
+        "name": "Visit Report",
+        "type": "visits",
+        "config": {
+            "forDataAnalysis": true,
+            "patientAttributes": [
+                "Phone"
+            ],
+            "visitAttributes": [
+                "Visit Status"
+            ],
+            "patientAddresses": [
+                "address5",
+		 "address3"
+                
+            ],
+            "applyDateRangeFor": "visitStopDate",
+            "visitTypesToFilter": [
+                "OPD"
+            ]
+        }
+    },
+    "testReport": {
+        "name": "Test Observation Report",
+        "type": "observations",
+        "config": {
+            "patientAttributes": [
+                "Phone"
+            ],
+            "patientAddresses": [
+                "address5",
+                "address3"
+            ],
+            "showProvider": true,
+            "formNamesToFilter": ["NCD Baseline visit"],
+	    "conceptNamesToFilter": [ "Diagnosis list"
+            ],
+            "conceptNameDisplayFormat": "shortNamePreferred",
+            "conceptClassesToFilter": [],
+            "ageGroupName": "All Ages",
+            "locationTagsToFilter": [],
+            "applyDateRangeFor": "obsDate",
+            "encounterPerRow": false,
+            "excludeColumns": ["Parent Concept"],
+            "forDataAnalysis": true
+        }
+    },
+    "patientReport": {
+        "name": "Patient Information",
+        "type": "PatientReport"
+    },
+    "drugOrderReport": {
+        "name": "Drug Order report",
+        "type": "DrugOrder"
+   
+  },
+      "visitReport": {
+        "name": "Visit Report",
+        "type": "visitReport",
+        "config": {
+            "personAttributes": [
+                "primaryContact"
+            ],
+            "visitAttributes": [
+                "Visit Status"
+            ]
+        }
+    },
+
+    "Total consultations": {
+        "name": "Total consultations Report",
+        "type": "observations",
+        "config": {
+            "patientAttributes": [
+                "Phone"
+            ],
+            "patientAddresses": [
+                "address5",
+                "address3"
+            ],
+            "visitAttributes": [
+                "Visit Status"
+            ],
+            "showVisitInfo": true,
+            "showProvider": true,
+            "formNamesToFilter": ["NCD Baseline visit"],
+            "conceptNamesToFilter": [ "Diagnosis list"
+            ],
+            "conceptNameDisplayFormat": "shortNamePreferred",
+            "conceptClassesToFilter": [],
+            "locationTagsToFilter": [],
+            "applyDateRangeFor": "obsDate",
+            "encounterPerRow": false,
+            "excludeColumns": ["Parent Concept"],
+            "forDataAnalysis": true,
+            "visitTypesToFilter": [
+                "OPD"
+            ]
+        }
+    },
+
+    "Defaulted": {
+    "name": "List of all patients who have defaulted",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/patients_who_have_defaulted.sql"
+    }
+  },
+    "Enrolled": {
+    "name": "List of all patients enrolled",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/Patient_enrolled.sql"
+    }
+  },
+    "New Consultations": {
+    "name": "List of new Patient consultations",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/new_patient_consultations.sql"
+    }
+  },
+    "Follow up Consultations": {
+    "name": "List of follow up  Patient consultations",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/followup_patient_consultations.sql"
+    }
+  },
+    "New up Consultations with percentage": {
+    "name": "List of new patient consulatations indicators",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/new_patient_consultations_indicators.sql"
+    }
+  },
+    "Follow up Consultations with percentage": {
+    "name": "List of follow up patient consulatations indicators",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/followup_patient_consultations_indicators.sql"
+    }
+  },
+    "New patients active in program": {
+    "name": "Number of new patients enrolled in program",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/actively_enrolled_new.sql"
+    }
+  },
+    "Total patients active in program": {
+    "name": "Number of patients enrolled in program",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/actively_enrolled_total.sql"
+    }
+  },
+    "Mortality Rate": {
+    "name": "Mortality Rate",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/mortality.sql"
+    }
+  },
+    "BP with hypertension": {
+    "name": "BP with Hypertension",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/bp_with_hypertension.sql"
+    }
+  },
+    "BP control with hypertension": {
+    "name": "BP control wih < 140/90 with Hypertension",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/bp_control_with_hyper.sql"
+    }
+  },
+ "patientInformationReport": {
+    "name": "Patient Visit Information Report (Excel)",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/excel_report_visit.sql",
+      "macroTemplatePath" : "/var/www/bahmni_config/openmrs/apps/reports/macroTemplates/Patient_visit_template.xls"
+    }
+  }, 
+ "patientInformationReportwithGender": {
+    "name": "Patient Visit Report with Grouping (Excel)",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/excel_report_visit_gen.sql",
+      "macroTemplatePath" : "/var/www/bahmni_config/openmrs/apps/reports/macroTemplates/Patient_visit_template_gen.xls"
+    }
+  }, 
+    "Diabetes control": {
+    "name": "Diabetes control",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diabetes_control.sql"
+    }
+  },
+  "nutritionProgram": {
+    "name": "Example report",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": ["Pulse rate"]
+    }
+  },
+   "nameOfReport": {
+       "name": "Blood Pressure aggregated",
+       "type": "aggregation",
+       "config": {
+           "report":{
+               "type": "observations",
+               "config": {
+                   "conceptNamesToFilter":["Blood pressure - systolic (mm Hg):","Blood Pressure – Diastolic (mmHg):"],
+                   "showVisitInfo" : true,
+                   "forDataAnalysis": true
+               }
+           },
+           "rowGroups": [
+               "Gender"
+           ],
+           "columnGroups": [
+               "Concept Name", "value"
+           ],
+           "distinctGroups": [
+               "Patient Identifier"
+           ],
+            "showTotalRow":true,
+            "showTotalColumn":true
+       }
+   },
+   "visit aggregated report": {
+       "name": "Visit aggregated report",
+       "type": "aggregation",
+       "config": {
+           "report":{
+		"type": "observations",
+        		"config": {
+           		 "patientAttributes": [
+                		"Phone"
+            ],
+            "patientAddresses": [
+                "address5",
+                "address3"
+            ],
+            "showProvider": true,
+            "formNamesToFilter": ["NCD Baseline visit"],
+            "conceptNamesToFilter": [ "Diagnosis list"
+            ],
+            "conceptNameDisplayFormat": "shortNamePreferred",
+            "conceptClassesToFilter": [],
+            "locationTagsToFilter": [],
+            "applyDateRangeFor": "obsDate",
+            "encounterPerRow": false,
+            "excludeColumns": ["Parent Concept"],
+            "forDataAnalysis": true
+        }
+           },
+           "rowGroups": [
+               "gender","age"
+           ],
+           "columnGroups": [
+               "Concept Name", "value"
+           ],
+           "distinctGroups": [
+               "Patient Identifier"
+           ],
+            "showTotalRow":true,
+            "showTotalColumn":true
+       }
+   },
+   "visit aggregated report with agegroup": {
+       "name": "Visit aggregated report with Age Groups",
+       "type": "aggregation",
+       "config": {
+           "report":{
+		"type": "observations",
+        		"config": {
+           		 "patientAttributes": [
+                		"Phone"
+            ],
+            "patientAddresses": [
+                "address5",
+                "address3"
+            ],
+            "showProvider": true,
+            "formNamesToFilter": ["NCD Baseline visit"],
+            "conceptNamesToFilter": [ "Diagnosis list"
+            ],
+            "conceptNameDisplayFormat": "shortNamePreferred",
+            "conceptClassesToFilter": [],
+            "locationTagsToFilter": [],
+            "ageGroupName": "GroupA",
+            "applyDateRangeFor": "obsDate",
+            "encounterPerRow": false,
+            "excludeColumns": ["Parent Concept"],
+            "forDataAnalysis": true
+        }
+           },
+           "rowGroups": [
+               "gender","GroupA"
+           ],
+           "columnGroups": [
+               "Concept Name", "value"
+           ],
+           "distinctGroups": [
+               "Patient Identifier"
+           ],
+            "showTotalRow":true,
+            "showTotalColumn":true
+       }
+   }
+}

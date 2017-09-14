@@ -1,0 +1,255 @@
+{
+    "id": "bahmni.clinical",
+    "extensionPoints": [
+        {
+            "id": "org.bahmni.clinical.consultation.board",
+            "description": "Bahmni Clinical Consultation Page"
+        },
+        {
+            "id": "org.bahmni.clinical.conceptSetGroup.*",
+            "description": "Define conceptsets part of a conceptset group"
+        },
+        {
+            "id": "org.bahmni.clinical.orders",
+            "description": "Bahmni Orders Page"
+        },
+        {
+            "id": "org.bahmni.patient.search",
+            "description": "Bahmni Patient search, lookups Page"
+        }
+    ],
+    "contextModel": [
+        "patientUuid",
+        "visitUuid"
+    ],
+    "config": {
+        "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
+        "quickPrints":false,
+        "networkConnectivity" : {
+            "showNetworkStatusMessage": false,
+            "networkStatusCheckInterval": 20000,
+            "showSaveConfirmDialog" : true,
+            "locales" : [
+                { "locale" : "fr", "css" : "offline-language-french"},
+                { "locale" : "es", "css": "offline-language-spanish"},
+                { "locale" : "pt", "css": "offline-language-portuguese-brazil"}
+            ]
+        },
+    	"diagnosisStatus": "Inactive",
+            "program": {
+                "patientInformation": {
+                    "ageLimit": 100
+                }
+            },
+            "patientContext": {
+        		"programAttributes": [
+            		"Id_Number",
+            		"Doctor",
+            		"Stage"
+        		],
+        		"personAttributes": [
+            		"class",
+            		"caste"
+        		],
+        		"additionalPatientIdentifiers": [
+           			"National Identification Number"
+       		],
+        		"preferredIdentifier": "Id_Number"
+    	},
+        "obsIgnoreList": [
+            "REGISTRATION FEES",
+            "COMMENTS",
+            "Patient file"
+        ],
+        "otherInvestigationsMap": {
+            "Radiology": "Radiology Order",
+            "Endoscopy": "Endoscopy Order"
+        },
+        "allowConsultationWhenNoOpenVisit": false,
+        "defaultVisitType": "OPD",
+        "visitTypeForRetrospectiveEntries": "Special OPD",
+        "maxConceptSetLevels": 3,
+        "allowOnlyCodedDiagnosis": false,
+        "conceptSetUI": {
+            "Chief Complaint Data": {
+                "autocomplete":true,
+                "codedConceptName":"Chief Complaint",
+                "nonCodedConceptName":"Non-Coded Chief Complaint",
+                "durationRequired": false,
+                "allowAddMore": true
+            },
+            "Tuberculosis, Adverse Effects" :{
+                "multiSelect" : true,
+                "autocomplete" : true
+            },
+            "Posture": {
+                "buttonSelect": true
+            },
+            "NCD Follow-up visit":{
+		"allowAddMore": false
+	    },
+	    "P/A Presenting Part": {
+                "multiSelect": true
+            },
+            "FHS": {
+                "buttonSelect": true
+            },
+"BMI":{
+                "disableAddNotes": true
+           },
+
+            "P/S (Per Speculum) - Cervix": {
+                "grid": true
+            },
+            "Anaemia, Stopped Since When": {
+                "conciseText": true
+            },
+            "Examination Notes": {
+                "conciseText": true
+            },
+            "Set1": {
+                "allowAddMore": true
+            },
+            "Set2": {
+                "allowAddMore": true
+            },
+            "Coded3": {
+                "multiSelect": true
+            },
+	   "Diagnosis list":{
+                 "dropdown": true
+	  },
+"Change in diagnosis(follow up)": {
+                     "required": true
+},
+          "Diagnosis block(baseline)": {
+                  "allowAddMore": true
+},
+          "Medication taken":{
+                   "dropdown":true
+},
+          "Medication Allergies / Side effects": {
+                   "allowAddMore": true
+},
+          "Referred to": {
+                "dropdown":"true"
+},
+            "Referred to Social Worker":{
+                 "dropdown": true
+},
+           "Referal Outcome":{
+                  "dropdown": true
+ },
+           "Complications block(baseline)":{
+                 "allowAddMore": true
+},
+           "Drug list": {
+                "dropdown": true
+},
+           "Smoking status": {
+                 "dropdown": true
+},
+                 "Patient Education Details" :{
+                 "dropdown": true
+},
+          "Diagnosis block":{
+                "allowAddMore": false
+          },
+          "Patients previous medications":{
+                "allowAddMore": true
+},
+
+"Hospitalization":{
+"dropdown": true
+},
+	  "Complications block":{
+                "allowAddMore": true
+           },
+           "Complications List":{
+                "dropdown": true
+          },
+          "Referral Out block":{
+                "allowAddMore": false 
+           },
+           "Referral Out List":{
+                "dropdown": true
+          },
+
+	  "Observed complication 1":{
+	  	"dropdown":true
+	  },
+	  "Observed complications":{
+                "allowAddMore":true
+          },
+	  "Test Name": {
+		"dropdown": true,
+		 "conciseText": true
+            },
+          "Required Tests":{
+		"allowAddMore":true
+		},
+
+	   "Image": {
+                "allowAddMore": true
+            },
+	    "Date":{
+		"allowFutureDates":true
+	    },
+	    "Fasting Glucose":{
+		"isTabular":true
+	    },
+	    "Random Glucose":{
+                "isTabular":true
+            },
+            "2hr post-prandial glucose":{
+                "isTabular":true
+            },
+	    "2hr post-prandial glucose - mmol / L":{
+		"disableAddNotes":true
+	    },
+  	    "2hr post-prandial glucose - mg/ dL":{
+                "disableAddNotes":true
+            },
+            "Random glucose - mmol / L":{
+                "disableAddNotes":true
+            },
+	    "Random glucose - mg / dL":{
+                "disableAddNotes":true
+            },
+	    "Fasting glucose - mg/dL":{
+                "disableAddNotes":true
+            },
+	    "Fasting glucose - mmol / L":{
+                "disableAddNotes":true
+            },
+"CABG:": {
+    "minYear": 1990,
+    "maxYear": 2200,
+    "allowFutureDates": true,
+    "displayMonthAndYear": true
+        },
+ 
+            "Gynaecology, Gravida": {
+                "stepper": true
+            },
+            "Accepted Family Planning methods": {
+                "multiSelect": true
+            },
+            "defaults": {
+                "Number of living children": 1,
+                "Accepted Family Planning methods": [
+                    "Condoms",
+                    "Pills"
+                ],
+                "Pain management given": true,
+                "Safe Abortion, Remarks": "Remarks",
+                "Malaria, Death Date": "2015-12-01"
+            }
+        },
+        "visitPage": {
+            "observationDisplay": {
+                "conceptNames": []
+            }
+        }
+    }
+}

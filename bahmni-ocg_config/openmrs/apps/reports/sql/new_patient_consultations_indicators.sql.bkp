@@ -1,0 +1,12 @@
+BEGIN;
+SET @count=(select count(*) from visit where  date_started <'#endDate#' and date_started > '#startDate#');
+
+select 
+	TIMESTAMPDIFF(YEAR,p.birthdate,CURDATE()) AS age,
+	p.gender,count(a.visit_id ) count, (count(a.visit_id)/@count)*100 percentage   from 
+	(select visit_id,patient_id,date_started from visit  where date_started <'#endDate#') a 
+left outer join (select visit_id,patient_id,date_started from visit  where date_started <'#startDate#') b on a.patient_id=b.patient_id 
+join person p on p.person_id = a.patient_id
+where b.visit_id is null  
+group by age,p.gender;
+COMMIT;
